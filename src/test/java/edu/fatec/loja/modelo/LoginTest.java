@@ -21,14 +21,17 @@ class LoginTest {
         assertDoesNotThrow(() -> login.senha());
 
         Assertions.assertThrows(IllegalArgumentException.class, ()-> new Login("", ""));
-
+        Assertions.assertThrows(IllegalArgumentException.class, ()-> new Login("marina", "123"));
 
     }
 
 
     @Test
     void testToString() {
+        Login joao = new Login("joão", "12345");
         assertEquals("Login{senha='12345', nomeUsuario='marina'}", login.toString());
+        assertEquals("Login{senha='12345', nomeUsuario='joão'}", joao.toString());
+
     }
 
 }

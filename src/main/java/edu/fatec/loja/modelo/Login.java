@@ -1,6 +1,9 @@
 package edu.fatec.loja.modelo;
 
-public record Login(String nomeUsuario, String senha) {
+public class Login{
+    private final String nomeUsuario;
+    private final String senha;
+
     public Login(String nomeUsuario, String senha) {
 
         if (nomeUsuario == null || nomeUsuario.trim().isEmpty()) {
@@ -13,6 +16,14 @@ public record Login(String nomeUsuario, String senha) {
 
         this.nomeUsuario = nomeUsuario.trim();
         this.senha = senha.trim();
+    }
+
+    public String nomeUsuario() {
+        return nomeUsuario;
+    }
+
+    public String senha() {
+        return senha;
     }
 
     @Override

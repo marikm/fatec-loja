@@ -21,6 +21,18 @@ public class Endereco {
         this.numeroCasa = numeroCasa;
     }
 
+    public String getCidade() {
+        return cidade;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public String getNumeroCasa() {
+        return numeroCasa;
+    }
+
     @Override
     public String toString() {
         return "Endereco{" +
@@ -29,6 +41,7 @@ public class Endereco {
                 ", numeroCasa='" + numeroCasa + '\'' +
                 '}';
     }
+
 }
 
 
