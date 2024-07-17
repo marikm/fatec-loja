@@ -41,6 +41,14 @@ public class Endereco {
                 ", numeroCasa='" + numeroCasa + '\'' +
                 '}';
     }
+
+    public static void main(String[] args) {
+
+
+            Endereco teste = new Endereco("", "sdasds", "80");
+
+        
+    }
 }
 
 
