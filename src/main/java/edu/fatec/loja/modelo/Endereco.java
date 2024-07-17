@@ -42,13 +42,6 @@ public class Endereco {
                 '}';
     }
 
-    public static void main(String[] args) {
-
-
-            Endereco teste = new Endereco("", "sdasds", "80");
-
-        
-    }
 }
 
 
