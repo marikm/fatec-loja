@@ -18,11 +18,11 @@ public class Login{
         this.senha = senha.trim();
     }
 
-    public String nomeUsuario() {
+    public String getNomeUsuario() {
         return nomeUsuario;
     }
 
-    public String senha() {
+    public String getSenha() {
         return senha;
     }
 
