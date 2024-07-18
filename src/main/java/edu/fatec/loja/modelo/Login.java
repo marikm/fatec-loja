@@ -1,6 +1,6 @@
 package edu.fatec.loja.modelo;
 
-public class Login{
+public class Login {
     private final String nomeUsuario;
     private final String senha;
 
