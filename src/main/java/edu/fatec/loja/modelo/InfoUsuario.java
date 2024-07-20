@@ -1,44 +1,34 @@
 package edu.fatec.loja.modelo;
 
-import edu.fatec.loja.service.InfoUsuarioValido;
+import edu.fatec.loja.service.Cpf;
+import edu.fatec.loja.service.PerfilUsuario;
 
 import java.util.Objects;
 
 public class InfoUsuario {
-    private final InfoUsuarioValido cpf;
-    private final InfoUsuarioValido tipo;
+    private final Cpf cpf;
+    private final PerfilUsuario perfilUsuario;
 
-    public InfoUsuario(InfoUsuarioValido cpf, InfoUsuarioValido tipo) {
+    public InfoUsuario(Cpf cpf, Cpf tipo, PerfilUsuario perfilUsuario) {
         this.cpf = cpf;
-        this.tipo = tipo;
+        this.perfilUsuario = perfilUsuario;
     }
 
-    public InfoUsuarioValido getCpf() {
+    public Cpf getCpf() {
         return cpf;
     }
 
-    public InfoUsuarioValido getTipo() {
-        return tipo;
+    public PerfilUsuario getPerfilUsuario() {
+        return perfilUsuario;
     }
 
     @Override
     public String toString() {
         return "InfoUsuario{" +
-                "cpf='" + cpf + '\'' +
-                ", tipo='" + tipo + '\'' +
+                "cpf=" + cpf +
+                ", perfilUsuario=" + perfilUsuario +
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        InfoUsuario that = (InfoUsuario) o;
-        return Objects.equals(cpf, that.cpf) && Objects.equals(tipo, that.tipo);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(cpf, tipo);
-    }
 }
