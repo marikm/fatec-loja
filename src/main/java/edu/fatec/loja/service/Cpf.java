@@ -6,7 +6,7 @@ public class Cpf {
 
     public Cpf(String cpf) {
         if(cpf == null || !validarCpf(cpf)){
-            throw new IllegalArgumentException("valor de cpf invalido");
+            throw new IllegalArgumentException("O cpf digitado não contem 11 digitos");
         }
         this.cpf = cpf;
 
@@ -25,13 +25,13 @@ public class Cpf {
 
     @Override
     public String toString() {
-        return "CpfValido{" +
+        return "Cpf{" +
                 "cpf='" + cpf + '\'' +
                 '}';
     }
 
     public static void main(String[] args) {
-        Cpf usuario = new Cpf("0191911808");
+        Cpf usuario = new Cpf("");
 
     }
 }

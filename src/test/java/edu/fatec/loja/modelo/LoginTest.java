@@ -12,13 +12,13 @@ class LoginTest {
 
     @Test
     public void verificaGettersEstaoCorretos() {
-        assertEquals("marina", login.nomeUsuario());
-        assertEquals("12345", login.senha());
+        assertEquals("marina", login.getNomeUsuario());
+        assertEquals("12345", login.getSenha());
     }
     @Test
     public void verificaExcecoes(){
-        assertDoesNotThrow(() -> login.nomeUsuario());
-        assertDoesNotThrow(() -> login.senha());
+        assertDoesNotThrow(() -> login.getNomeUsuario());
+        assertDoesNotThrow(() -> login.getSenha());
 
         Assertions.assertThrows(IllegalArgumentException.class, ()-> new Login("", ""));
         Assertions.assertThrows(IllegalArgumentException.class, ()-> new Login("marina", "123"));

@@ -1,19 +1,21 @@
 package edu.fatec.loja.modelo;
 
+import edu.fatec.loja.excecoes.EnderecoException;
+
 public class Endereco {
     private final String cidade;
     private final String rua;
     private final String numeroCasa;
 
-    public Endereco(String cidade, String rua, String numeroCasa) {
+    public Endereco(String cidade, String rua, String numeroCasa) throws EnderecoException {
         if (cidade == null || cidade.isEmpty()) {
-            throw new IllegalArgumentException("Por favor, digite o nome da cidade");
+            throw new EnderecoException("Valor do campo cidade nulo ou vazio");
         }
         if (rua == null || rua.isEmpty()) {
-            throw new IllegalArgumentException("Por favor, digite o nome da rua");
+            throw new EnderecoException("Valor do campo rua nulo ou vazio");
         }
         if (numeroCasa == null || numeroCasa.isEmpty()) {
-            throw new IllegalArgumentException("Por favor, digite o numero da casa");
+            throw new EnderecoException("Valor do campo numero da casa nulo ou vazio");
         }
 
         this.cidade = cidade;
