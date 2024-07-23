@@ -1,23 +1,19 @@
 package edu.fatec.loja.modelo;
 
 import edu.fatec.loja.excecoes.EnderecoException;
-import edu.fatec.loja.service.Cidade;
-import edu.fatec.loja.service.NumeroCasa;
+import edu.fatec.loja.service.endereco.Cidade;
+import edu.fatec.loja.service.endereco.NumeroCasa;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class EnderecoTest {
 
-    EnderecoTest() throws EnderecoException { // nao entendi isso aqui
-    }
-
     @Test
     public void validandoSaidaDasExcecoes(){
-        assertEquals("Valor do campo cidade nulo ou vazio", assertThrows(EnderecoException.class, () -> new Endereco(new Cidade("", "MG"), "A", new NumeroCasa("270"))).getMessage());
+        assertEquals("Valor do nome ou estado da cidade nulo ou vazio", assertThrows(EnderecoException.class, () -> new Endereco(new Cidade("", "MG"), "A", new NumeroCasa("270"))).getMessage());
         assertEquals("Valor do campo rua nulo ou vazio", assertThrows(EnderecoException.class, () -> new Endereco( new Cidade("Araçatuba", "SP"), "", new NumeroCasa("500"))).getMessage());
         assertEquals("Valor do campo numero da casa nulo ou vazio", assertThrows(EnderecoException.class, () -> new Endereco( new Cidade("Araçatuba", "SP"), "A", new NumeroCasa(""))).getMessage());
-
     }
 
     @SuppressWarnings("EmptyMethod")

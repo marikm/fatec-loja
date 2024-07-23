@@ -1,7 +1,7 @@
 package edu.fatec.loja.modelo;
 
-import edu.fatec.loja.service.Cpf;
-import edu.fatec.loja.service.PerfilUsuario;
+import edu.fatec.loja.service.infoUsuario.Cpf;
+import edu.fatec.loja.service.infoUsuario.PerfilUsuario;
 
 
 public class InfoUsuario {
