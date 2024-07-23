@@ -11,7 +11,6 @@ class CpfTest {
     void testandoExcecoes(){
         assertEquals("Cpf nao informado", assertThrows(InfoUsuarioException.class, ()->new Cpf("")).getMessage());
         assertEquals("O cpf digitado não contem 11 digitos", assertThrows(InfoUsuarioException.class, ()->new Cpf("12313")).getMessage());
-
     }
 
     @Test

@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EnderecoTest {
 
     @Test
-    public void validandoSaidaDasExcecoes(){
+    public void validandoSaidaDasExcecoes() {
         assertEquals("Valor do nome ou estado da cidade nulo ou vazio", assertThrows(EnderecoException.class, () -> new Endereco(new Cidade("", "MG"), "A", new NumeroCasa("270"))).getMessage());
         assertEquals("Valor do campo rua nulo ou vazio", assertThrows(EnderecoException.class, () -> new Endereco( new Cidade("Araçatuba", "SP"), "", new NumeroCasa("500"))).getMessage());
         assertEquals("Valor do campo numero da casa nulo ou vazio", assertThrows(EnderecoException.class, () -> new Endereco( new Cidade("Araçatuba", "SP"), "A", new NumeroCasa(""))).getMessage());

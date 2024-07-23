@@ -1,6 +1,5 @@
 package edu.fatec.loja.modelo;
 
-import edu.fatec.loja.excecoes.LoginException;
 import edu.fatec.loja.service.login.Nome;
 import edu.fatec.loja.service.login.Senha;
 

@@ -12,7 +12,6 @@ class NumeroCasaTest {
         assertEquals("Numero de casa invalido", assertThrows(EnderecoException.class, () -> new NumeroCasa("adasdd")).getMessage());
         assertEquals("Valor do campo numero da casa nulo ou vazio", assertThrows(EnderecoException.class, () -> new NumeroCasa("")).getMessage());
         assertEquals("Valor do campo numero da casa nulo ou vazio", assertThrows(EnderecoException.class, () -> new NumeroCasa("    ")).getMessage());
-
     }
 
     @Test
@@ -20,7 +19,6 @@ class NumeroCasaTest {
         assertFalse(NumeroCasa.validaNumeroCasa("qeqqe"));
         assertFalse(NumeroCasa.validaNumeroCasa("123a"));
         assertTrue(NumeroCasa.validaNumeroCasa("21213"));
-
     }
 
     @Test

@@ -20,7 +20,6 @@ class PerfilUsuarioTest {
         assertTrue(PerfilUsuario.validarPerfil("vendedor"));
         assertTrue(PerfilUsuario.validarPerfil("cliente"));
         assertFalse(PerfilUsuario.validarPerfil("usuario"));
-
     }
 
     @Test
