@@ -25,11 +25,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
-                "login=" + login +
-                ", endereco=" + endereco +
-                ", infoUsuario=" + infoUsuario +
-                '}';
+        return login + " " + endereco + " " + infoUsuario;
     }
 
 }

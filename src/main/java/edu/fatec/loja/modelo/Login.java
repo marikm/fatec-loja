@@ -8,7 +8,7 @@ public class Login {
     private final Nome nomeUsuario;
     private final Senha senha;
 
-    public Login(Nome nomeUsuario, Senha senha) throws LoginException {
+    public Login(Nome nomeUsuario, Senha senha) {
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
     }

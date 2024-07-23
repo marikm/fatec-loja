@@ -16,7 +16,7 @@ class NumeroCasaTest {
     }
 
     @Test
-    void validaNumeroCasa() throws EnderecoException {
+    void validaNumeroCasa() {
         assertFalse(NumeroCasa.validaNumeroCasa("qeqqe"));
         assertFalse(NumeroCasa.validaNumeroCasa("123a"));
         assertTrue(NumeroCasa.validaNumeroCasa("21213"));

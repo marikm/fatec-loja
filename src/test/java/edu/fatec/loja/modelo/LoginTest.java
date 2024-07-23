@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import edu.fatec.loja.excecoes.LoginException;
 import edu.fatec.loja.service.login.Nome;
 import edu.fatec.loja.service.login.Senha;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class LoginTest {
