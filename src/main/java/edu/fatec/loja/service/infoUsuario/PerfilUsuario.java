@@ -7,13 +7,16 @@ public class PerfilUsuario {
     private final String vendedorOuCliente;
 
     public PerfilUsuario(String vendedorOuCliente) throws InfoUsuarioException {
+        if(vendedorOuCliente.isBlank()){
+            throw new InfoUsuarioException("Perfil de usuario nao informado");
+        }
         if (!validarPerfil(vendedorOuCliente)) {
-            throw new InfoUsuarioException("Perfil de usuario invalido");
+            throw new InfoUsuarioException("Perfil de usuario invalido, deve ser vendedor ou cliente");
         }
         this.vendedorOuCliente = vendedorOuCliente;
     }
 
-    private boolean validarPerfil(String vendedorOuCliente) {
+    public static boolean validarPerfil(String vendedorOuCliente) {
         return vendedorOuCliente.equals("vendedor" )|| vendedorOuCliente.equals("cliente");
     }
 
@@ -24,8 +27,6 @@ public class PerfilUsuario {
 
     @Override
     public String toString() {
-        return "PerfilUsuario{" +
-                "vendedorOuCliente='" + vendedorOuCliente + '\'' +
-                '}';
+        return vendedorOuCliente;
     }
 }

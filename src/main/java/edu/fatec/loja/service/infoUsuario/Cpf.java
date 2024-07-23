@@ -7,7 +7,12 @@ public class Cpf {
     private final String cpf;
 
     public Cpf(String cpf) throws InfoUsuarioException {
-        if (cpf == null || !validarCpf(cpf)) {
+
+        if(cpf.isBlank()){
+            throw new InfoUsuarioException("Cpf nao informado");
+        }
+
+        if (!validarCpf(cpf)) {
             throw new InfoUsuarioException("O cpf digitado não contem 11 digitos");
         }
         this.cpf = cpf;
@@ -18,15 +23,13 @@ public class Cpf {
         return cpf;
     }
 
-    private static boolean validarCpf(String cpf) {
+    public static boolean validarCpf(String cpf) {
         return cpf.length() == 11;
     }
 
     @Override
     public String toString() {
-        return "Cpf{" +
-                "cpf='" + cpf + '\'' +
-                '}';
+        return cpf;
     }
 
 }
