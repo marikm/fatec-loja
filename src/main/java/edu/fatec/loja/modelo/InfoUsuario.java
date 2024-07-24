@@ -1,27 +1,33 @@
 package edu.fatec.loja.modelo;
 
-public class InfoUsuario {
-    private final String cpf;
-    private final String tipo;
+import edu.fatec.loja.service.infoUsuario.Cpf;
+import edu.fatec.loja.service.infoUsuario.PerfilUsuario;
 
-    public InfoUsuario(String cpf, String tipo) {
+
+public class InfoUsuario {
+    private final Cpf cpf;
+    private final PerfilUsuario perfilUsuario;
+
+    public InfoUsuario(Cpf cpf, PerfilUsuario perfilUsuario) {
         this.cpf = cpf;
-        this.tipo = tipo;
+        this.perfilUsuario = perfilUsuario;
     }
 
-    public String getCpf() {
+    public Cpf getCpf() {
         return cpf;
     }
 
-    public String getTipo() {
-        return tipo;
+    public PerfilUsuario getPerfilUsuario() {
+        return perfilUsuario;
     }
 
     @Override
     public String toString() {
         return "InfoUsuario{" +
-                "cpf='" + cpf + '\'' +
-                ", tipo='" + tipo + '\'' +
+                "cpf=" + cpf +
+                ", perfilUsuario=" + perfilUsuario +
                 '}';
     }
+
+
 }

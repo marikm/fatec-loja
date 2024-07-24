@@ -1,36 +1,30 @@
 package edu.fatec.loja.modelo;
 
-public class Login{
-    private final String nomeUsuario;
-    private final String senha;
+import edu.fatec.loja.service.login.Nome;
+import edu.fatec.loja.service.login.Senha;
 
-    public Login(String nomeUsuario, String senha) {
+public class Login {
+    private final Nome nomeUsuario;
+    private final Senha senha;
 
-        if (nomeUsuario == null || nomeUsuario.trim().isEmpty()) {
-            throw new IllegalArgumentException("Nome do usuário não pode ser nulo nem vazio");
-        }
-
-        if (senha == null || senha.length() < 5) {
-            throw new IllegalArgumentException("Campo senha não pode ser nulo nem conter menos de 5 caracteres");
-        }
-
-        this.nomeUsuario = nomeUsuario.trim();
-        this.senha = senha.trim();
+    public Login(Nome nomeUsuario, Senha senha) {
+        this.nomeUsuario = nomeUsuario;
+        this.senha = senha;
     }
 
-    public String nomeUsuario() {
+    public Nome getNomeUsuario() {
         return nomeUsuario;
     }
 
-    public String senha() {
+    public Senha getSenha() {
         return senha;
     }
 
     @Override
     public String toString() {
         return "Login{" +
-                "senha='" + senha + '\'' +
-                ", nomeUsuario='" + nomeUsuario + '\'' +
+                "nomeUsuario=" + nomeUsuario +
+                ", senha=" + senha +
                 '}';
     }
 }

@@ -1,27 +1,24 @@
 package edu.fatec.loja.modelo;
 
+import edu.fatec.loja.excecoes.EnderecoException;
+import edu.fatec.loja.service.endereco.Cidade;
+import edu.fatec.loja.service.endereco.NumeroCasa;
+
 public class Endereco {
-    private final String cidade;
+    private final Cidade cidade;
     private final String rua;
-    private final String numeroCasa;
+    private final NumeroCasa numeroCasa;
 
-    public Endereco(String cidade, String rua, String numeroCasa) {
-        if (cidade == null || cidade.isEmpty()) {
-            throw new IllegalArgumentException("Por favor, digite o nome da cidade");
+    public Endereco(Cidade cidade, String rua, NumeroCasa numeroCasa) throws EnderecoException {
+        if (rua.isBlank()) {
+            throw new EnderecoException("Valor do campo rua nulo ou vazio");
         }
-        if (rua == null || rua.isEmpty()) {
-            throw new IllegalArgumentException("Por favor, digite o nome da rua");
-        }
-        if (numeroCasa == null || numeroCasa.isEmpty()) {
-            throw new IllegalArgumentException("Por favor, digite o numero da casa");
-        }
-
         this.cidade = cidade;
         this.rua = rua;
         this.numeroCasa = numeroCasa;
     }
 
-    public String getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
@@ -29,19 +26,18 @@ public class Endereco {
         return rua;
     }
 
-    public String getNumeroCasa() {
+    public NumeroCasa getNumeroCasa() {
         return numeroCasa;
     }
 
     @Override
     public String toString() {
         return "Endereco{" +
-                "cidade='" + cidade + '\'' +
+                "cidade=" + cidade +
                 ", rua='" + rua + '\'' +
-                ", numeroCasa='" + numeroCasa + '\'' +
+                ", numeroCasa=" + numeroCasa +
                 '}';
     }
-
 }
 
 

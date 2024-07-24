@@ -1,14 +1,14 @@
 package edu.fatec.loja.modelo;
 
-import java.util.logging.Logger;
-
 public class Usuario {
-    private Login login;
-    private Endereco endereco;
+    private final Login login;
+    private final Endereco endereco;
+    private final InfoUsuario infoUsuario;
 
-    public Usuario(Login login, Endereco endereco) {
+    public Usuario(Login login, Endereco endereco, InfoUsuario infoUsuario) {
         this.login = login;
         this.endereco = endereco;
+        this.infoUsuario = infoUsuario;
     }
 
     public Login getLogin() {
@@ -18,4 +18,14 @@ public class Usuario {
     public Endereco getEndereco() {
         return endereco;
     }
+
+    public InfoUsuario getInfoUsuario() {
+        return infoUsuario;
+    }
+
+    @Override
+    public String toString() {
+        return login + " " + endereco + " " + infoUsuario;
+    }
+
 }
