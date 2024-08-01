@@ -36,6 +36,11 @@ class ShapeTest {
         Shape shape2 = new Circle(4.0);
         System.out.println("Area do shape2: " + shape2.area());
 
+        Shape shape3 = new Trapeze(2.0,4.0,2.0);
+        System.out.println(shape3);
+        System.out.println("Area do shape3: " + shape3.area());
+
+
 
     }
 
