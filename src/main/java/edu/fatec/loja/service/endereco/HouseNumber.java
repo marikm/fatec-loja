@@ -10,11 +10,12 @@ public class HouseNumber {
         if (value == 0 || value == null) {
             throw new AdressException("Valor do campo numero da casa nulo ou vazio");
         }
-        if(value.toString().matches("[a-z]*")){
-            throw new AdressException("Valor informado contém letra, deve conter apenas numeros");
-        }
+//        if (value.toString().matches("[a-z]*")) {
+//            throw new AdressException("Valor informado contém letra, deve conter apenas numeros");
+//        }
         this.value = value;
     }
+
 
 //    public static boolean validaNumeroCasa(String numeroCasa){
 //        return numeroCasa.matches("[0-9]*");
