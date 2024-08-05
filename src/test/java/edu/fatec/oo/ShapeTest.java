@@ -32,11 +32,13 @@ class ShapeTest {
         // continuar falando sobre isso
         Shape shape1 = new Rectangle(3.0, 2.0);
         System.out.println("Area do shape1: " + shape1.area());
+        System.out.println("Perimetro do shape1: " + shape1.perimeter());
+        System.out.println(shape1);
 
         Shape shape2 = new Circle(4.0);
         System.out.println("Area do shape2: " + shape2.area());
 
-        Shape shape3 = new Trapeze(2.0,4.0,2.0);
+        Shape shape3 = new Trapezoid(2.0,4.0,2.0, 3.0, 4.0);
         System.out.println(shape3);
         System.out.println("Area do shape3: " + shape3.area());
 
