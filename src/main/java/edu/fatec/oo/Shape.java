@@ -1,11 +1,9 @@
 package edu.fatec.oo;
 
-
 /**
  * - Heranca simples. Java tem herança simples.
  *   Uma class só pode extends um class de cada vez.
  * - Em java, TODA class extends Object implicitamente
- *
  * - uma classe pode ter varios construtores
  * - herança / sobreescrever o compartamento do "super".class
  */

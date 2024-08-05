@@ -1,5 +1,6 @@
 package edu.fatec.oo;
 
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class ShapeTest {
@@ -46,4 +47,18 @@ class ShapeTest {
 
     }
 
+    @Test
+    void testExceptionsClassShape() {
+        assertThrows(RuntimeException.class, () -> new Shape("shape1").area());
+        assertThrows(RuntimeException.class, () -> new Shape("shape2").perimeter());
+        // testando as mensaagens das excecoes
+        assertEquals("not supported", assertThrows(RuntimeException.class, () -> new Shape("shape1").area()).getMessage());
+        assertEquals("not supported", assertThrows(RuntimeException.class, () -> new Shape("shape1").perimeter()).getMessage());
+
+    }
+
+    @Test
+    void testShapeString() {
+        assertEquals("Shape.toString(): name=square", new Shape("square").toString());
+    }
 }
