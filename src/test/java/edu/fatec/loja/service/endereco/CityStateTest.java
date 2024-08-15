@@ -13,6 +13,29 @@ class CityStateTest {
         assertEquals("Cep value null or uninformed", assertThrows(AdressException.class, () -> new CityState("    ")).getMessage());
     }
 
+    @Test()
+    void testExceptions2() {
+        Exception error = null;
+
+        try {
+            new CityState("");
+        } catch (Exception e) {
+            error = e;
+        }
+
+        assertNotNull(error);
+        assertEquals("Cep value null or uninformed", error.getMessage());
+    }
+
+    @Test()
+    void testExceptions3() {
+        final AdressException ex1 = assertThrows(AdressException.class, () -> new CityState(""));
+        assertEquals("Cep value null or uninformed", ex1.getMessage());
+
+        final AdressException ex2 = assertThrows(AdressException.class, () -> new CityState("    "));
+        assertEquals("Cep value null or uninformed", ex2.getMessage());
+    }
+
     @Test
     void testGetCep() throws AdressException {
         assertEquals("16072470", new CityState("16072470").getCep());

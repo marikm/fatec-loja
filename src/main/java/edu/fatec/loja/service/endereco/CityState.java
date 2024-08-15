@@ -7,7 +7,7 @@ public class CityState {
     private final String cep;
 
     public CityState(String cep) throws AdressException {
-        if (cep.isBlank() || cep == null) {
+        if (cep == null || cep.isBlank()) {
             throw new AdressException("Cep value null or uninformed");
         }
         this.cep = cep;
