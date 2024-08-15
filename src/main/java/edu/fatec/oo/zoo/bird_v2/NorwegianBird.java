@@ -10,7 +10,7 @@ class NorwegianBird extends Bird {
 
     @Override
     double getSpeed() {
-        if (isNailed) {
+        if (getNailed()) {
             return 0;
         }
 
