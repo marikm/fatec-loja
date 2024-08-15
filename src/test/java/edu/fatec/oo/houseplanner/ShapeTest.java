@@ -9,14 +9,14 @@ class ShapeTest {
     @Test
     void testingExceptionAreaOfShape() {
         Shape shape1 = new Shape("square");
-        RuntimeException e = assertThrows(RuntimeException.class, () -> shape1.area());
+        RuntimeException e = assertThrows(RuntimeException.class, shape1::area);
         assertEquals("Not supported", e.getMessage());
     }
 
     @Test
     void testingExceptionPerimeterOfShape() {
         Shape shape1 = new Shape("square");
-        RuntimeException e = assertThrows(RuntimeException.class, () -> shape1.perimeter());
+        RuntimeException e = assertThrows(RuntimeException.class, shape1::perimeter);
         assertEquals("Not supported", e.getMessage());
     }
 
