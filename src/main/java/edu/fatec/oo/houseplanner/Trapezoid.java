@@ -16,6 +16,26 @@ class Trapezoid extends Shape {
         this.h = h;
     }
 
+    public Double getB() {
+        return b;
+    }
+
+    public Double getB1() {
+        return b1;
+    }
+
+    public Double getC() {
+        return c;
+    }
+
+    public Double getC1() {
+        return c1;
+    }
+
+    public Double getH() {
+        return h;
+    }
+
     @Override
     public Double area() {
         return ((b + b1) * h) / 2.0;

@@ -17,14 +17,14 @@ public class Shape {
     }
 
     public Double area() {
-        throw new RuntimeException("not supported");
+        throw new RuntimeException("Not supported");
     }
 
     public Double perimeter() { throw new RuntimeException("Not supported"); }
 
     @Override
     public String toString() {
-        return "Shape.toString(): name=" + name;
+        return "Shape.toString(): name= " + name;
     }
 }
 
