@@ -1,4 +1,4 @@
-package edu.fatec.oo;
+package edu.fatec.oo.houseplanner;
 
 public class Circle extends Shape {
     private final Double r;

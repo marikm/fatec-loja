@@ -1,4 +1,4 @@
-package edu.fatec.oo;
+package edu.fatec.oo.houseplanner;
 
 import org.junit.jupiter.api.Test;
 

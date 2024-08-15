@@ -1,4 +1,4 @@
-package edu.fatec.oo;
+package edu.fatec.oo.houseplanner;
 
 /**
  * - Heranca simples. Java tem herança simples.
