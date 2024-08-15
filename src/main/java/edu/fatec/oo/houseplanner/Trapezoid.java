@@ -1,4 +1,4 @@
-package edu.fatec.oo;
+package edu.fatec.oo.houseplanner;
 
 class Trapezoid extends Shape {
     private final Double b;

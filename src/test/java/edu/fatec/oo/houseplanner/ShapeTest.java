@@ -1,6 +1,7 @@
-package edu.fatec.oo;
+package edu.fatec.oo.houseplanner;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 class ShapeTest {
@@ -17,6 +18,9 @@ class ShapeTest {
         Circle circle1 = new Circle(3.0);
         System.out.println(circle1);
         System.out.println("Minha area é: " + circle1.area());
+
+        Shape shape0 = circle1; // circle polimorfico
+        // shape0.getR(); nao funciona
 
         // continuar falando sobre isso
         Shape shape1 = new Rectangle(3.0, 2.0);
