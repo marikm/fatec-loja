@@ -30,6 +30,6 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "Rectangle{y=%s, x=%s}".formatted(y, x) + " Area= " + area() + " Perimeter= " + perimeter();
+        return "Rectangle{y=%s, x=%s}".formatted(y, x);
     }
 }
