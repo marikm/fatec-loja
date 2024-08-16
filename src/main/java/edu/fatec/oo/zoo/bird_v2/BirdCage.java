@@ -28,7 +28,7 @@ public class BirdCage {
     }
 
     public Double getAverageSpeed() {
-        Double totalSpeed = 0.0;
+        double totalSpeed = 0.0;
         for(Bird value : birds){
             totalSpeed += value.getSpeed();
         }
