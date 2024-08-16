@@ -5,10 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BirdCageTest {
 
-        AfricanBird bird1 = new AfricanBird(2.0,3);//-4
-        EuropeanBird bird2 = new EuropeanBird();//2
-        NorwegianBird bird3 = new NorwegianBird(true);//0
-        EuropeanBird bird4 = new EuropeanBird();
+        final AfricanBird bird1 = new AfricanBird(2.0,3);//-4
+        final EuropeanBird bird2 = new EuropeanBird();//2
+        final NorwegianBird bird3 = new NorwegianBird(true);//0
+        final EuropeanBird bird4 = new EuropeanBird();
 
     @Test
     void addBird() {
