@@ -20,4 +20,9 @@ class NorwegianBird extends Bird {
     public Boolean getNailed() {
         return isNailed;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

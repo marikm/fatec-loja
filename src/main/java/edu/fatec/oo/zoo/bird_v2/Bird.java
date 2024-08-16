@@ -1,5 +1,7 @@
 package edu.fatec.oo.zoo.bird_v2;
 
+
+
 public class Bird {
 
     double getSpeed() {

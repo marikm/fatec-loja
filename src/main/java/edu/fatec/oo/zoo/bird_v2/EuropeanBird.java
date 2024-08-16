@@ -7,4 +7,8 @@ class EuropeanBird extends Bird {
         return getBaseSpeed();
     }
 
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
