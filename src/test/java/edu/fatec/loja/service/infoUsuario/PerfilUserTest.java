@@ -17,15 +17,15 @@ class PerfilUserTest {
 
     @Test
     void validarPerfil() {
-        assertTrue(UserProfile.validarPerfil("vendedor"));
-        assertTrue(UserProfile.validarPerfil("cliente"));
-        assertFalse(UserProfile.validarPerfil("usuario"));
+        assertTrue(UserProfile.validateProfile("vendedor"));
+        assertTrue(UserProfile.validateProfile("cliente"));
+        assertFalse(UserProfile.validateProfile("usuario"));
     }
 
     @Test
     void getVendedorOuCliente() throws InfoUserException {
-        assertEquals("vendedor", new UserProfile("vendedor").getVendedorOuCliente());
-        assertEquals("cliente", new UserProfile("cliente").getVendedorOuCliente());
+        assertEquals("vendedor", new UserProfile("vendedor").getOption());
+        assertEquals("cliente", new UserProfile("cliente").getOption());
     }
 
     @Test

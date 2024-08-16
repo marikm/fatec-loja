@@ -4,29 +4,28 @@ import edu.fatec.loja.excecoes.InfoUserException;
 
 public class UserProfile {
 
-    private final String vendedorOuCliente;
+    private final String option;
 
-    public UserProfile(String vendedorOuCliente) throws InfoUserException {
-        if(vendedorOuCliente.isBlank()){
-            throw new InfoUserException("Perfil de usuario nao informado");
+    public UserProfile(String option) throws InfoUserException {
+        if(option == null || option.isBlank()){
+            throw new InfoUserException("Profile user not informed");
         }
-        if (!validarPerfil(vendedorOuCliente)) {
-            throw new InfoUserException("Perfil de usuario invalido, deve ser vendedor ou cliente");
+        if (!validateProfile(option)) {
+            throw new InfoUserException("Invalid profile user, just salesPerson or client");
         }
-        this.vendedorOuCliente = vendedorOuCliente;
+        this.option = option;
     }
 
-    public static boolean validarPerfil(String vendedorOuCliente) {
-        return vendedorOuCliente.equals("vendedor" )|| vendedorOuCliente.equals("cliente");
+    public static boolean validateProfile(String salesPersonOrClient) {
+        return salesPersonOrClient.equals("salesPerson" )|| salesPersonOrClient.equals("client");
     }
 
-    public String getVendedorOuCliente() {
-        return vendedorOuCliente;
-
+    public String getOption() {
+        return option;
     }
 
     @Override
     public String toString() {
-        return vendedorOuCliente;
+        return option;
     }
 }

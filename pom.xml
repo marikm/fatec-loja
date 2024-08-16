@@ -32,11 +32,13 @@
             <artifactId>junit-jupiter</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>com.github.SavioAndres</groupId>
             <artifactId>BrasilAPI-Java</artifactId>
             <version>v1.1.0</version>
         </dependency>
+
     </dependencies>
     <repositories>
         <repository>
