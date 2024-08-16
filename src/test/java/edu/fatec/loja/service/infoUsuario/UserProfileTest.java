@@ -1,7 +1,6 @@
 package edu.fatec.loja.service.infoUsuario;
 
 import edu.fatec.loja.excecoes.InfoUserException;
-import edu.fatec.loja.modelo.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
