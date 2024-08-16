@@ -47,8 +47,7 @@ public class Adress {
 
     @Override
     public String toString() {
-        return "Endereco{" +
-                "cidade=" + cityState +
+        return "Endereco{" + cityState +
                 ", rua='" + street + '\'' +
                 ", numeroCasa=" + houseNumber +
                 '}';

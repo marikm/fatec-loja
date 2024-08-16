@@ -41,8 +41,39 @@ AdressTest {
         assertEquals(new CityState("38800000"), adress.getCityState(),  "CityState should match the expected value");
     }
 
+
     @Test
-    public void testToString() throws AdressException {
+    void getStreet() throws AdressException {
+        Adress adress = new Adress(new CityState("38800000"), "Onofre", new HouseNumber(123));
+        assertEquals("Onofre", adress.getStreet());
+    }
+
+    @Test
+    void getNumeroCasa() throws AdressException {
+        Adress adress = new Adress(new CityState("38800000"), "Onofre", new HouseNumber(123));
+        assertEquals(new HouseNumber(123), adress.getNumeroCasa());
+    }
+
+    @Test
+    void testEqualsAdress() throws AdressException {
+        Adress adress = new Adress(new CityState("38800000"), "Onofre", new HouseNumber(123));
+        Adress adress2 = new Adress(new CityState("38800000"), "Onofre", new HouseNumber(123));
+
+        assertEquals(adress, adress2);
+    }
+
+    @Test
+    void testHashCodeAdress() throws AdressException {
+        Adress adress = new Adress(new CityState("38800000"), "Onofre", new HouseNumber(123));
+        Adress adress2 = new Adress(new CityState("38800000"), "Onofre", new HouseNumber(123));
+
+        assertEquals(adress.hashCode(), adress2.hashCode());
 
     }
+    @Test
+    public void testToStringAdress() throws AdressException {
+        Adress adress = new Adress(new CityState("38800000"), "Onofre", new HouseNumber(123));
+        assertEquals("Endereco{cidade=São Gotardo, estado=MG, rua='Onofre', numeroCasa=123}", adress.toString());
+    }
 }
+

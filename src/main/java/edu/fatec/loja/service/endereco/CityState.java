@@ -42,6 +42,6 @@ public class CityState {
 
     @Override
     public String toString() {
-        return "{cidade="+ BrasilAPI.cep(cep).getCity() + ", " + "estado=" + BrasilAPI.cep(cep).getState() + "}";
+        return "cidade="+ BrasilAPI.cep(cep).getCity() + ", " + "estado=" + BrasilAPI.cep(cep).getState();
     }
 }
