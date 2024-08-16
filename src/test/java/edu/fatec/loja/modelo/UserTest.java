@@ -15,40 +15,77 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserTest {
 
-    @Test
-    void getLogin() throws LoginException, AdressException, InfoUserException {
-        User userTeste = new User(new Login(new Name("marina"), new Password("Ab123123")),
-                new Adress(new CityState("38800000"), "nomeRua", new HouseNumber(123)),
-                new edu.fatec.loja.modelo.InfoUser(new Cpf("09809889012"), new UserProfile("vendedor")));
 
-        assertEquals("Login{nomeUsuario=marina, senha=Ab123123}", userTeste.getLogin().toString());
+    @Test
+    void getLogin() throws AdressException, LoginException, InfoUserException {
+        Login login1 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress1 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser1 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        User user1 = new User(login1, adress1, infoUser1);
+
+        Login login2 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        assertEquals(login2, user1.getLogin());
     }
 
     @Test
-    void getEndereco() throws LoginException, AdressException, InfoUserException {
-        User userTeste = new User(new Login(new Name("marina"), new Password("Ab123123")),
-                new Adress(new CityState("38800000"), "nomeRua", new HouseNumber(123)),
-                new edu.fatec.loja.modelo.InfoUser(new Cpf("09809889012"), new UserProfile("vendedor")));
+    void getAdress() throws AdressException, LoginException, InfoUserException {
+        Login login1 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress1 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser1 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        User user1 = new User(login1, adress1, infoUser1);
 
-        assertEquals("Endereco{cidade=sao gotardo, UF = MG, rua='nomeRua', numeroCasa=123}", userTeste.getEndereco().toString());
+        Adress adress2 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        assertEquals(adress2, user1.getAdress());
     }
 
     @Test
-    void getInfoUsuario() throws LoginException, AdressException, InfoUserException {
-        User userTeste = new User(new Login(new Name("marina"), new Password("Ab123123")),
-                new Adress(new CityState("38800000"), "nomeRua", new HouseNumber(123)),
-                new edu.fatec.loja.modelo.InfoUser(new Cpf("09809889012"), new UserProfile("vendedor")));
+    void getInfoUsuario() throws AdressException, LoginException, InfoUserException  {
+        Login login1 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress1 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser1 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        User user1 = new User(login1, adress1, infoUser1);
 
-        assertEquals("InfoUsuario{cpf=09809889012, perfilUsuario=vendedor}", userTeste.getInfoUsuario().toString());
+        InfoUser infoUser2 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        assertEquals(infoUser2, user1.getInfoUsuario());
+    }
+
+    @Test
+    void testEquals() throws AdressException, LoginException, InfoUserException {
+        Login login1 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress1 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser1 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        User user1 = new User(login1, adress1, infoUser1);
+
+        Login login2 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress2 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser2 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        User user2 = new User(login2, adress2, infoUser2);
+
+        assertEquals(user1, user2);
+    }
+
+    @Test
+    void testHashCode() throws AdressException, LoginException, InfoUserException {
+        Login login1 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress1 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser1 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        User user1 = new User(login1, adress1, infoUser1);
+
+        Login login2 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress2 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser2 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
+        User user2 = new User(login2, adress2, infoUser2);
+
+        assertEquals(user1.hashCode(), user2.hashCode());
     }
 
     @Test
     void testToString() throws AdressException, LoginException, InfoUserException {
-        User userTeste = new User(new Login(new Name("marina"), new Password("Ab123123")),
-                new Adress(new CityState("38800000"), "nomeRua", new HouseNumber(123)),
-                new edu.fatec.loja.modelo.InfoUser(new Cpf("09809889012"), new UserProfile("vendedor")));
+        Login login1 = new Login(new Name("maria"), new Password("Sdw1456d"));
+        Adress adress1 = new Adress(new CityState("38800000"), "Oliveiras", new HouseNumber(123));
+        InfoUser infoUser1 = new InfoUser(new Cpf("71982196670"), new UserProfile("salesPerson"));
 
-        assertEquals("Login{nomeUsuario=marina, senha=Ab123123} Endereco{cidade=sao gotardo, UF = MG, rua='nomeRua', numeroCasa=123} InfoUsuario{cpf=09809889012, perfilUsuario=vendedor}", userTeste.toString());
-
+        User user1 = new User(login1, adress1, infoUser1);
+        assertEquals("Login{username=maria, password=Sdw1456d} Endereco{cidade=São Gotardo, estado=MG, rua='Oliveiras', numeroCasa=123} InfoUser{cpf=71982196670, userProfile=salesPerson}", user1.toString());
     }
 }

@@ -23,4 +23,13 @@ class HouseNumberTest {
         assertEquals("12345", new HouseNumber(12345).toString());
     }
 
+    @Test
+    void testEquals() throws AdressException {
+        assertEquals(new HouseNumber(123), new HouseNumber(123));
+    }
+
+    @Test
+    void testHashCode() throws AdressException {
+        assertEquals(new HouseNumber(123).hashCode(), new HouseNumber(123).hashCode());
+    }
 }

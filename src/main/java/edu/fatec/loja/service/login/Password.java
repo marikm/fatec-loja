@@ -5,31 +5,31 @@ import edu.fatec.loja.excecoes.LoginException;
 import java.util.Objects;
 
 public class Password {
-    private final String senha;
+    private final String value;
 
-    public Password(String senha) throws LoginException {
-        if(senha.isBlank()){
-            throw new LoginException("Senha nao pode ser nulo ou vazio");
+    public Password(String value) throws LoginException {
+        if(value == null || value.isBlank()){
+            throw new LoginException("Password null or blank");
         }
-        if(!validarCharSenha(senha)){
-            throw new LoginException("Senha deve conter pelo menos 1 numero, 1 caracter minusculo e 1 maisculo");
+        if(!validatePasswordField(value)){
+            throw new LoginException("Password must have 1 caracter lowcase, 1 uppercase and 1 number");
         }
-        if(!validarTamanhoSenha(senha)){
-            throw new LoginException("Senha deve conter entre 6-15 caracteres");
+        if(!validatePasswordSize(value)){
+            throw new LoginException("Password must have 6-15 caracters");
         }
-        this.senha = senha;
+        this.value = value;
     }
 
-    public static boolean validarTamanhoSenha(String senha){
-        return senha.length() >=6 && senha.length() < 16;
+    public static boolean validatePasswordSize(String password){
+        return password.length() >=6 && password.length() < 16;
     }
 
-    public static boolean validarCharSenha(String senha){
+    public static boolean validatePasswordField(String senha){
         return senha.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).+$");
     }
 
-    public String getSenha() {
-        return senha;
+    public String getValue() {
+        return value;
     }
 
     @Override
@@ -37,16 +37,16 @@ public class Password {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Password password = (Password) o;
-        return Objects.equals(senha, password.senha);
+        return Objects.equals(value, password.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(senha);
+        return Objects.hashCode(value);
     }
 
     @Override
     public String toString() {
-        return senha;
+        return value;
     }
 }

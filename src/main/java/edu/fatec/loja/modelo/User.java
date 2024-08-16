@@ -1,5 +1,7 @@
 package edu.fatec.loja.modelo;
 
+import java.util.Objects;
+
 public class User {
     private final Login login;
     private final Adress adress;
@@ -15,12 +17,25 @@ public class User {
         return login;
     }
 
-    public Adress getEndereco() {
+    public Adress getAdress() {
         return adress;
     }
 
     public InfoUser getInfoUsuario() {
         return infoUser;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(login, user.login) && Objects.equals(adress, user.adress) && Objects.equals(infoUser, user.infoUser);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login, adress, infoUser);
     }
 
     @Override

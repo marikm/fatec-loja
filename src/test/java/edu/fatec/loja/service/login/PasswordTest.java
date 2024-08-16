@@ -8,24 +8,54 @@ import static org.junit.jupiter.api.Assertions.*;
 class PasswordTest {
 
     @Test
-    void validarTamanhoSenha() {
-        assertEquals("Senha nao pode ser nulo ou vazio", assertThrows(LoginException.class, ()-> new Password("")).getMessage()); // porque quando coloco valor nulo nao da certo
-        assertEquals("Senha deve conter entre 6-15 caracteres", assertThrows(LoginException.class, ()-> new Password("a1b3C")).getMessage());
+    void validatePasswordSize() {
+        assertEquals("Password null or blank", assertThrows(LoginException.class, ()-> new Password("")).getMessage());
+        assertEquals("Password must have 6-15 caracters", assertThrows(LoginException.class, ()-> new Password("a1b3C")).getMessage());
     }
 
     @Test
-    void validarCharSenha() {
+    void validatePasswordField() {
         assertDoesNotThrow( ()-> new Password("12412aB"));
-        assertEquals("Senha deve conter pelo menos 1 numero, 1 caracter minusculo e 1 maisculo", assertThrows(LoginException.class, ()-> new Password("a1b334")).getMessage());
+        assertEquals("Password must have 1 caracter lowcase, 1 uppercase and 1 number", assertThrows(LoginException.class, ()-> new Password("a1b334")).getMessage());
     }
 
     @Test
-    void getSenha() throws LoginException {
-        assertEquals("1234Ab", new Password("1234Ab").getSenha());
+    void getPasswordValue() throws LoginException {
+        assertEquals("1234Ab", new Password("1234Ab").getValue());
     }
 
     @Test
     void testToString() throws LoginException {
         assertEquals("1234Ab", new Password("1234Ab").toString());
+    }
+
+    @Test
+    void testEquals() throws LoginException {
+        Password pass1 = new Password("1234Ab");
+        Password pass2 = new Password("1234Ab");
+
+        assertEquals(pass1, pass2);
+    }
+
+    @Test
+    void testHashCode() throws LoginException {
+        Password pass1 = new Password("1234Ab");
+        Password pass2 = new Password("1234Ab");
+
+        assertEquals(pass1.hashCode(), pass2.hashCode());
+    }
+
+    @Test
+
+    void testValidatePasswordSize() {
+        String pass = "1234Ab";
+        assertTrue(Password.validatePasswordSize(pass));
+    }
+
+    @Test
+    void testValidatePasswordField() {
+        String pass = "1234Ab";
+        assertTrue(Password.validatePasswordField(pass));
+
     }
 }

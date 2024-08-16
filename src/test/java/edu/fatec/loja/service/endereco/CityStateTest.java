@@ -7,26 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CityStateTest {
 
-    @Test
-    void testExceptions() {
-        assertEquals("Cep value null or uninformed", assertThrows(AdressException.class, () -> new CityState("")).getMessage());
-        assertEquals("Cep value null or uninformed", assertThrows(AdressException.class, () -> new CityState("    ")).getMessage());
-    }
-
-    @Test()
-    void testExceptions2() {
-        Exception error = null;
-
-        try {
-            new CityState("");
-        } catch (Exception e) {
-            error = e;
-        }
-
-        assertNotNull(error);
-        assertEquals("Cep value null or uninformed", error.getMessage());
-    }
-
     @Test()
     void testExceptions3() {
         final AdressException ex1 = assertThrows(AdressException.class, () -> new CityState(""));
@@ -56,7 +36,17 @@ class CityStateTest {
 
     @Test
     void testToString() throws AdressException {
-        assertEquals("Araçatuba, SP", new CityState("16072470").toString());
-        assertEquals("São Gotardo, MG", new CityState("38800000").toString());
+        assertEquals("cidade=Araçatuba, estado=SP", new CityState("16072470").toString());
+        assertEquals("cidade=São Gotardo, estado=MG", new CityState("38800000").toString());
+    }
+
+    @Test
+    void testEquals() throws AdressException {
+        assertEquals(new CityState("38800000"), new CityState("38800000"));
+    }
+
+    @Test
+    void testHashCode() throws AdressException {
+        assertEquals(new CityState("38800000").hashCode(), new CityState("38800000").hashCode());
     }
 }
