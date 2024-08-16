@@ -37,10 +37,9 @@ public class InfoUser {
 
     @Override
     public String toString() {
-        return "InfoUsuario{" +
+        return "InfoUser{" +
                 "cpf=" + cpf +
-                ", perfilUsuario=" + userProfile +
+                ", userProfile=" + userProfile +
                 '}';
     }
-
 }

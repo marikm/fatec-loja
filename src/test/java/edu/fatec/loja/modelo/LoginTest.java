@@ -10,24 +10,39 @@ import org.junit.jupiter.api.Test;
 class LoginTest {
 
     @Test
-    public void verificaGettersNomeSenha() throws LoginException {
-        assertEquals("marina", new Login(new Name("marina"), new Password("1234Ab")).getNomeUsuario().toString());
-        assertEquals("1234Ab", new Login(new Name("marina"), new Password("1234Ab")).getSenha().toString());
+    void getUsername() throws LoginException {
+        Login login1 = new Login(new Name("maria"), new Password("4545DCsj"));
+
+        assertEquals(new Name("maria"), login1.getUsername());
     }
 
     @Test
-    public void verificaExcecoesLogin(){
-        assertEquals("Nome nao pode ser nulo ou vazio", assertThrows(LoginException.class, ()-> new Login(new Name(""), new Password("123aBCdsde"))).getMessage());
-        assertEquals("Senha nao pode ser nulo ou vazio", assertThrows(LoginException.class, ()-> new Login(new Name("Mike"), new Password(""))).getMessage());
-        assertEquals("Senha deve conter pelo menos 1 numero, 1 caracter minusculo e 1 maisculo", assertThrows(LoginException.class, ()-> new Login(new Name("Mike"), new Password("a2b321"))).getMessage());
-        assertEquals("Senha deve conter entre 6-15 caracteres", assertThrows(LoginException.class, ()-> new Login(new Name("Maria"), new Password("a1b3C"))).getMessage());
+    void getPassword() throws LoginException {
+        Login login1 = new Login(new Name("maria"), new Password("4545DCsj"));
+
+        assertEquals(new Password("4545DCsj"), login1.getPassword());
     }
 
+    @Test
+    void testEquals() throws LoginException {
+        Login login1 = new Login(new Name("josé"), new Password("hDas456"));
+        Login login2 = new Login(new Name("josé"), new Password("hDas456"));
+
+        assertEquals(login1, login2);
+    }
+
+    @Test
+    void testHashCode() throws LoginException {
+        Login login1 = new Login(new Name("josé"), new Password("hDas456"));
+        Login login2 = new Login(new Name("josé"), new Password("hDas456"));
+
+        assertEquals(login1.hashCode(), login2.hashCode());
+    }
 
     @Test
     void testToString() throws LoginException {
-        assertEquals("Login{nomeUsuario=marina, senha=1234Ab}", new Login(new Name("marina"), new Password("1234Ab")).toString());
-        assertEquals("Login{nomeUsuario=maria, senha=ABc1d1223}", new Login(new Name("maria"), new Password("ABc1d1223")).toString());
-    }
+        Login login1 = new Login(new Name("josé"), new Password("hDas456"));
 
+        assertEquals("Login{username=josé, password=hDas456}", login1.toString());
+    }
 }

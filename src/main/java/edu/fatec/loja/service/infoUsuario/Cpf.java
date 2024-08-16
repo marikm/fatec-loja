@@ -3,6 +3,7 @@ package edu.fatec.loja.service.infoUsuario;
 import edu.fatec.loja.excecoes.InfoUserException;
 
 import java.util.InputMismatchException;
+import java.util.Objects;
 
 
 public class Cpf {
@@ -55,6 +56,19 @@ public class Cpf {
         catch (InputMismatchException erro) {
             return(false);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cpf cpf = (Cpf) o;
+        return Objects.equals(value, cpf.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(value);
     }
 
     public String getCpf() {

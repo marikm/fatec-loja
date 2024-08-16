@@ -2,6 +2,8 @@ package edu.fatec.loja.service.login;
 
 import edu.fatec.loja.excecoes.LoginException;
 
+import java.util.Objects;
+
 public class Password {
     private final String senha;
 
@@ -28,6 +30,19 @@ public class Password {
 
     public String getSenha() {
         return senha;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Password password = (Password) o;
+        return Objects.equals(senha, password.senha);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(senha);
     }
 
     @Override

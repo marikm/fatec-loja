@@ -5,27 +5,41 @@ import edu.fatec.loja.service.infoUsuario.Cpf;
 import edu.fatec.loja.service.infoUsuario.UserProfile;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class InfoUserTest {
 
     @Test
     void getCpfOfInfoUser() throws InfoUserException {
-        InfoUser user1 = new InfoUser(new Cpf("13212123"), new UserProfile("salesPerson"));
+        InfoUser user1 = new InfoUser(new Cpf("07172152298"), new UserProfile("salesPerson"));
+        assertEquals(new Cpf("07172152298"), user1.getCpf());
     }
 
     @Test
-    void getProfileUser() {
+    void getProfileUser() throws InfoUserException {
+        InfoUser user1 = new InfoUser(new Cpf("07172152298"), new UserProfile("salesPerson"));
+        assertEquals(new UserProfile("salesPerson"), user1.getProfileUser());
     }
 
     @Test
-    void testEquals() {
+    void testEqualsInfoUser() throws InfoUserException {
+        InfoUser user1 = new InfoUser(new Cpf("07172152298"), new UserProfile("salesPerson"));
+        InfoUser user2 = new InfoUser(new Cpf("07172152298"), new UserProfile("salesPerson"));
+
+        assertEquals(user1, user2);
     }
 
     @Test
-    void testHashCode() {
+    void testHashCode() throws InfoUserException {
+        InfoUser user1 = new InfoUser(new Cpf("07172152298"), new UserProfile("salesPerson"));
+        InfoUser user2 = new InfoUser(new Cpf("07172152298"), new UserProfile("salesPerson"));
+
+        assertEquals(user1.hashCode(), user2.hashCode());
     }
 
     @Test
-    void testToString() {
+    void testToString() throws InfoUserException {
+        InfoUser user1 = new InfoUser(new Cpf("07172152298"), new UserProfile("salesPerson"));
+        assertEquals("InfoUser{cpf=07172152298, userProfile=salesPerson}", user1.toString());
     }
 }

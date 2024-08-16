@@ -2,6 +2,8 @@ package edu.fatec.loja.service.infoUsuario;
 
 import edu.fatec.loja.excecoes.InfoUserException;
 
+import java.util.Objects;
+
 public class UserProfile {
 
     private final String option;
@@ -22,6 +24,19 @@ public class UserProfile {
 
     public String getOption() {
         return option;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserProfile that = (UserProfile) o;
+        return Objects.equals(option, that.option);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(option);
     }
 
     @Override

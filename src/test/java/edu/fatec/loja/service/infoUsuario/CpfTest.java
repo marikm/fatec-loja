@@ -58,4 +58,19 @@ class CpfTest {
         assertEquals("76185933969",  new Cpf("76185933969").toString());
     }
 
+    @Test
+    void testEqualsCpf() throws InfoUserException {
+        Cpf cpfPerson1 = new Cpf("91632614804");
+        Cpf cpfPerson2 = new Cpf("91632614804");
+
+        assertEquals(cpfPerson1, cpfPerson2);
+    }
+
+    @Test
+    void testHashCode() throws InfoUserException {
+        Cpf cpfPerson1 = new Cpf("91632614804");
+        Cpf cpfPerson2 = new Cpf("91632614804");
+
+        assertEquals(cpfPerson1.hashCode(), cpfPerson2.hashCode());
+    }
 }
