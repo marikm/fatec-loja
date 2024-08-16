@@ -3,6 +3,8 @@ package edu.fatec.loja.service.endereco;
 import br.com.brasilapi.BrasilAPI;
 import edu.fatec.loja.excecoes.AdressException;
 
+import java.util.Objects;
+
 public class CityState {
     private final String cep;
 
@@ -26,7 +28,20 @@ public class CityState {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CityState cityState = (CityState) o;
+        return Objects.equals(cep, cityState.cep);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(cep);
+    }
+
+    @Override
     public String toString() {
-        return BrasilAPI.cep(cep).getCity() + ", " + BrasilAPI.cep(cep).getState();
+        return "cidade="+ BrasilAPI.cep(cep).getCity() + ", " + "estado=" + BrasilAPI.cep(cep).getState();
     }
 }

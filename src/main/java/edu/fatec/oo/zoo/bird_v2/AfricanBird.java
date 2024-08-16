@@ -21,4 +21,9 @@ class AfricanBird extends Bird {
     public Double getLoadFactor() {
         return loadFactor;
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }
