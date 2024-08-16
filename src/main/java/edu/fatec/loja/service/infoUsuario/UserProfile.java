@@ -1,17 +1,17 @@
 package edu.fatec.loja.service.infoUsuario;
 
-import edu.fatec.loja.excecoes.InfoUsuarioException;
+import edu.fatec.loja.excecoes.InfoUserException;
 
-public class PerfilUsuario {
+public class UserProfile {
 
     private final String vendedorOuCliente;
 
-    public PerfilUsuario(String vendedorOuCliente) throws InfoUsuarioException {
+    public UserProfile(String vendedorOuCliente) throws InfoUserException {
         if(vendedorOuCliente.isBlank()){
-            throw new InfoUsuarioException("Perfil de usuario nao informado");
+            throw new InfoUserException("Perfil de usuario nao informado");
         }
         if (!validarPerfil(vendedorOuCliente)) {
-            throw new InfoUsuarioException("Perfil de usuario invalido, deve ser vendedor ou cliente");
+            throw new InfoUserException("Perfil de usuario invalido, deve ser vendedor ou cliente");
         }
         this.vendedorOuCliente = vendedorOuCliente;
     }

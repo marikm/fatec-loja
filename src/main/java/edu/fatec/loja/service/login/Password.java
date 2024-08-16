@@ -2,10 +2,10 @@ package edu.fatec.loja.service.login;
 
 import edu.fatec.loja.excecoes.LoginException;
 
-public class Senha {
+public class Password {
     private final String senha;
 
-    public Senha(String senha) throws LoginException {
+    public Password(String senha) throws LoginException {
         if(senha.isBlank()){
             throw new LoginException("Senha nao pode ser nulo ou vazio");
         }

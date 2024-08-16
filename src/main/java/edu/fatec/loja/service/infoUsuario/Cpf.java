@@ -1,19 +1,19 @@
 package edu.fatec.loja.service.infoUsuario;
 
-import edu.fatec.loja.excecoes.InfoUsuarioException;
+import edu.fatec.loja.excecoes.InfoUserException;
 
 public class Cpf {
 
     private final String cpf;
 
-    public Cpf(String cpf) throws InfoUsuarioException {
+    public Cpf(String cpf) throws InfoUserException {
 
         if(cpf.isBlank()){
-            throw new InfoUsuarioException("Cpf nao informado");
+            throw new InfoUserException("Cpf nao informado");
         }
 
         if (!validarCpf(cpf)) {
-            throw new InfoUsuarioException("O cpf digitado não contem 11 digitos");
+            throw new InfoUserException("O cpf digitado não contem 11 digitos");
         }
         this.cpf = cpf;
 
