@@ -1,18 +1,13 @@
 package edu.fatec.oo.zoo.bird_v2;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class BirdCageTest {
 
-        AfricanBird bird1 = new AfricanBird(2.0,3);
-        EuropeanBird bird2 = new EuropeanBird();
-        NorwegianBird bird3 = new NorwegianBird(true);
+        AfricanBird bird1 = new AfricanBird(2.0,3);//-4
+        EuropeanBird bird2 = new EuropeanBird();//2
+        NorwegianBird bird3 = new NorwegianBird(true);//0
         EuropeanBird bird4 = new EuropeanBird();
 
     @Test
@@ -22,9 +17,7 @@ class BirdCageTest {
         cage.addBird(bird2);
         cage.addBird(bird3);
         cage.addBird(bird4);
-        ArrayIndexOutOfBoundsException e = assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
-            cage.addBird(bird4);
-        });
+        ArrayIndexOutOfBoundsException e = assertThrows(ArrayIndexOutOfBoundsException.class, () -> cage.addBird(bird4));
         assertEquals("The cage only fits three birds", e.getMessage());
     }
 
@@ -45,6 +38,16 @@ class BirdCageTest {
         cage.addBird(bird2);
         cage.addBird(bird3);
         assertEquals("[AfricanBird, EuropeanBird, NorwegianBird]", cage.getBirds().toString());
+    }
+
+    @Test
+    void shouldCalculateTheSpeedAverage() {
+        BirdCage cage = new BirdCage();
+        cage.addBird(bird1);
+        cage.addBird(bird2);
+        cage.addBird(bird3);
+        assertEquals(-0.6666666666666666, cage.getAverageSpeed());
+
     }
 
     @Test

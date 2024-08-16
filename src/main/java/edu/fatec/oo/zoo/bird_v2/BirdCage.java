@@ -27,7 +27,13 @@ public class BirdCage {
         return birds;
     }
 
-    public Double getS
+    public Double getAverageSpeed() {
+        Double totalSpeed = 0.0;
+        for(Bird value : birds){
+            totalSpeed += value.getSpeed();
+        }
+        return totalSpeed/getSizeBirdsList();
+    }
 
     @Override
     public String toString() {
