@@ -31,6 +31,20 @@ public class Rectangle extends Shape {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Rectangle rectangle = (Rectangle) o;
+        return Objects.equals(x, rectangle.x) && Objects.equals(y, rectangle.y);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), x, y);
+    }
+
+    @Override
     public String toString() {
         return "Rectangle{y=%s, x=%s}".formatted(y, x);
     }

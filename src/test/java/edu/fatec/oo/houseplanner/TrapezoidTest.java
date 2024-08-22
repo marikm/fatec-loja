@@ -49,6 +49,10 @@ class TrapezoidTest {
     }
 
     @Test
+    void equalsAndHashCodeTest() {
+    }
+
+    @Test
     void testToString() {
         Trapezoid trap1 = new Trapezoid(2.0, 4.0, 3.0, 1.0,1.0);
         assertEquals("Trapeze={baseMenor=2.0, baseMaior=4.0, altura=3.0}", trap1.toString());

@@ -1,5 +1,7 @@
 package edu.fatec.oo.houseplanner;
 
+import java.util.Objects;
+
 class Trapezoid extends Shape {
     private final Double b;
     private final Double b1;
@@ -44,6 +46,20 @@ class Trapezoid extends Shape {
     @Override
     public Double perimeter() {
         return b + b1 + c + c1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Trapezoid trapezoid = (Trapezoid) o;
+        return Objects.equals(b, trapezoid.b) && Objects.equals(b1, trapezoid.b1) && Objects.equals(c, trapezoid.c) && Objects.equals(c1, trapezoid.c1) && Objects.equals(h, trapezoid.h);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), b, b1, c, c1, h);
     }
 
     @Override

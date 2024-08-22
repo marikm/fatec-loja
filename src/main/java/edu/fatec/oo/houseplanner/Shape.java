@@ -1,5 +1,7 @@
 package edu.fatec.oo.houseplanner;
 
+import java.util.Objects;
+
 /**
  * - Heranca simples. Java tem herança simples.
  *   Uma class só pode extends um class de cada vez.
@@ -18,6 +20,19 @@ public abstract class Shape {
     public abstract Double area();
 
     public abstract Double perimeter();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Shape shape = (Shape) o;
+        return Objects.equals(name, shape.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
+    }
 
     @Override
     public String toString() {

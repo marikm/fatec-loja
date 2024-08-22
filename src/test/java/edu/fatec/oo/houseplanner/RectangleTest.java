@@ -2,6 +2,8 @@ package edu.fatec.oo.houseplanner;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ResourceBundle;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class RectangleTest {
@@ -28,6 +30,15 @@ class RectangleTest {
     void perimeter() {
         Rectangle rec = new Rectangle(2.0,3.0);
         assertEquals(10.0, rec.perimeter());
+    }
+
+    @Test
+    void equalsAndHashCodeTest() {
+        Rectangle rectangle1 = new Rectangle(4.0, 5.0);
+        Rectangle rectangle2 = new Rectangle(4.0, 5.0);
+
+        assertEquals(rectangle1, rectangle2);
+        assertEquals(rectangle1.hashCode(), rectangle2.hashCode());
     }
 
     @Test
