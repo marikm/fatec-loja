@@ -12,15 +12,6 @@ public class Circle extends Shape {
         return r;
     }
 
-    @Override
-    public Double area() {
-        return Math.PI * Math.pow(this.r, 2);
-    }
-
-    @Override
-    public Double perimeter() {
-        return 2 * Math.PI * r;
-    }
 
     @Override
     public String toString() {
