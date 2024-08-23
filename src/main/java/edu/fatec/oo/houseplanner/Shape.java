@@ -20,7 +20,9 @@ public class Shape {
         throw new RuntimeException("Not supported");
     }
 
-    public Double perimeter() { throw new RuntimeException("Not supported"); }
+    public Double perimeter() {
+        throw new RuntimeException("Not supported");
+    }
 
     @Override
     public String toString() {
