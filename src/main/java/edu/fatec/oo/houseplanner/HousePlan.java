@@ -16,9 +16,7 @@ public class HousePlan {
 
     public Double getTotalArea() {
         Double total = 0.0;
-        for (Shape room : this.rooms) {
-            total += room.area();
-        }
+        for (Shape room : this.rooms) total += room.area();
         return total;
     }
 
