@@ -2,14 +2,16 @@ package edu.fatec.oo.zoo.bird_v2;
 
 
 
-public class Bird {
+public abstract class Bird {
 
-    double getSpeed() {
-        throw new RuntimeException("Not implemented");
-    }
+    public abstract double getSpeed();
 
-    double getBaseSpeed() {
+    public double getBaseSpeed() {
         return 2.0;
     }
 
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

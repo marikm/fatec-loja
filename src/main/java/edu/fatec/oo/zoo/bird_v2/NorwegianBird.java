@@ -1,5 +1,7 @@
 package edu.fatec.oo.zoo.bird_v2;
 
+import java.util.Objects;
+
 class NorwegianBird extends Bird {
 
     final private Boolean isNailed;
@@ -9,7 +11,7 @@ class NorwegianBird extends Bird {
     }
 
     @Override
-    double getSpeed() {
+    public double getSpeed() {
         if (getNailed()) {
             return 0;
         }
@@ -22,7 +24,15 @@ class NorwegianBird extends Bird {
     }
 
     @Override
-    public String toString() {
-        return this.getClass().getSimpleName();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NorwegianBird that = (NorwegianBird) o;
+        return Objects.equals(isNailed, that.isNailed);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(isNailed);
     }
 }

@@ -14,6 +14,16 @@ public class Circle extends Shape {
 
 
     @Override
+    public Double area() {
+        return Math.PI*Math.pow(r,2);
+    }
+
+    @Override
+    public Double perimeter() {
+        return Math.PI*2*r;
+    }
+
+    @Override
     public String toString() {
         return "Circle{r=%s}".formatted(r);
     }

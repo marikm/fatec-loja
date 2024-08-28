@@ -1,5 +1,7 @@
 package edu.fatec.oo.zoo.bird_v2;
 
+import java.util.Objects;
+
 class AfricanBird extends Bird {
     final private Integer numberOfCoconuts;
     final private Double loadFactor;
@@ -10,7 +12,7 @@ class AfricanBird extends Bird {
     }
 
     @Override
-    double getSpeed() {
+    public double getSpeed() {
         return getBaseSpeed() - getLoadFactor() * getNumberOfCoconuts();
     }
 
@@ -23,7 +25,15 @@ class AfricanBird extends Bird {
     }
 
     @Override
-    public String toString() {
-        return this.getClass().getSimpleName();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AfricanBird that = (AfricanBird) o;
+        return Objects.equals(numberOfCoconuts, that.numberOfCoconuts) && Objects.equals(loadFactor, that.loadFactor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numberOfCoconuts, loadFactor);
     }
 }

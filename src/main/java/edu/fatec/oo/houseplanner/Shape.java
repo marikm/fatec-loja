@@ -7,26 +7,21 @@ package edu.fatec.oo.houseplanner;
  * - uma classe pode ter varios construtores
  * - herança / sobreescrever o compartamento do "super".class
  */
-public class Shape {
+public abstract class Shape {
 
     private final String name;
 
     public Shape(final String name) {
-        System.out.println("Shape.construtor name");
         this.name = name;
     }
 
-    public Double area() {
-        throw new RuntimeException("Not supported");
-    }
+    public abstract Double area();
 
-    public Double perimeter() {
-        throw new RuntimeException("Not supported");
-    }
+    public abstract Double perimeter();
 
     @Override
     public String toString() {
-        return "Shape.toString(): name= " + name;
+        return "Class= " + getClass() + " name= " + name;
     }
 }
 
