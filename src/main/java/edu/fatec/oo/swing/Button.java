@@ -15,7 +15,7 @@ class InputText {
 }
 
 public class Button {
-    public void onClick(OnClickEvent event) {
+    public void onClick(final OnClickEvent event) {
         System.out.println("vou executar o codigo do onClickEvent");
         event.clicked();
         System.out.println("terminado de executar o codigo do onClickEvent");

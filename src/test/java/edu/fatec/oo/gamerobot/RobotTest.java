@@ -1,12 +1,7 @@
 package edu.fatec.oo.gamerobot;
 
-import edu.fatec.PessoaFisica;
 import org.junit.jupiter.api.Test;
 
-import java.util.AbstractList;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
 
 class RobotTest {

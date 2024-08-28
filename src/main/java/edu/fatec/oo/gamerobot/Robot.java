@@ -1,7 +1,5 @@
 package edu.fatec.oo.gamerobot;
 
-import java.util.Objects;
-
 // interface = trait = contrato
 public interface Robot {
     Double getDamageRate();
