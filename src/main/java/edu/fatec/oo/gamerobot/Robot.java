@@ -1,33 +1,62 @@
 package edu.fatec.oo.gamerobot;
 
-public abstract class Robot {
+// interface = trait = contrato
+public interface Robot {
+    Double getDamageRate();
 
-    public abstract Double getDamageRate();
+    void fire();
+}
 
-    public void fire() {
-        System.out.println("fire-dmg: " + getDamageRate());
-    }
+interface CanFly {
+    void fly();
+}
+
+interface SuperSpeed {
+    void runFast();
+}
+
+interface SuperRobot extends Robot, CanFly, SuperSpeed {
 
 }
 
-class Level1Robot extends Robot  {
 
+abstract class BaseRobot implements Robot {
+    @Override
+    public void fire() {
+        System.out.println(this.getClass().getSimpleName() + " fire=" + getDamageRate());
+    }
+}
+
+class Level1Robot extends BaseRobot implements SuperRobot {
     @Override
     public Double getDamageRate() {
-        return 1.0;
+        return 0.0;
     }
 
+    @Override
+    public void fly() {
+        System.out.println("Leve1Robot flying...");
+    }
+
+    @Override
+    public void runFast() {
+        System.out.println("Leve1Robot running really fast...");
+    }
 }
 
-class Level2Robot extends Robot {
-
+class Level2Robot extends BaseRobot implements SuperRobot {
     @Override
     public Double getDamageRate() {
         return 2.0;
     }
 
-    public void flyAndFire() {
-        System.out.println("I'm flying and fire-dmg: " + getDamageRate());
+    @Override
+    public void fly() {
+        System.out.println("Leve2Robot flying...");
+    }
+
+    @Override
+    public void runFast() {
+        System.out.println("Leve2Robot running really fast...");
     }
 }
-
